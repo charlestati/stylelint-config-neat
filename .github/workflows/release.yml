@@ -1,0 +1,33 @@
+# This workflow will publish a new release to npm and Github
+# For more information, see: https://docs.github.com/en/free-pro-team@latest/actions/guides/building-and-testing-nodejs
+
+name: release
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  release:
+    name: Publish a release to npm and Github
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node-version: [14]
+        os: [ubuntu-latest]
+    steps:
+      - name: Checkout the full history
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
