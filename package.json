@@ -1,6 +1,6 @@
 {
   "name": "stylelint-config-neat",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "A neat shareable config for stylelint",
   "main": "index.js",
   "files": [
