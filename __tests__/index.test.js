@@ -92,8 +92,7 @@ describe("does error and flags warnings with invalid styles", () => {
     );
   });
 
-  // TODO Doesn't flag warnings anymore?
-  it.skip("flags 4 warnings", () => {
+  it("flags 4 warnings", () => {
     return result.then((data) =>
       expect(
         data.results[0].warnings.filter(
