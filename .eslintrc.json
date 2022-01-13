@@ -1,4 +1,19 @@
 {
   "root": true,
-  "extends": ["stylelint"]
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 11
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "overrides": [
+    {
+      "files": ["*.test.js"],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
 }

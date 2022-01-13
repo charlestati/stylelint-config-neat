@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [14]
+        node-version: [16]
         os: [ubuntu-latest]
     steps:
       - name: Checkout
@@ -30,7 +30,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [10, 12, 14]
+        node-version: [12, 14, 16]
         os: [macos-latest, ubuntu-latest, windows-latest]
     steps:
       - uses: actions/checkout@v2
@@ -42,5 +42,3 @@ jobs:
         run: npm ci
       - name: Test
         run: npm test
-        env:
-          CI: true

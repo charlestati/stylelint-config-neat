@@ -27,19 +27,19 @@ describe("does not error and flags no warnings with valid styles", () => {
   let result;
 
   beforeEach(() => {
+    const customConfig = {
+      ...config,
+    };
+    customConfig.rules["plugin/no-unsupported-browser-features"] = [
+      true,
+      {
+        browsers: ["last 1 firefox version"],
+        severity: "warning",
+      },
+    ];
     result = stylelint.lint({
       code: validStyles,
-      config,
-      configOverrides: {
-        rules: {
-          "plugin/no-unsupported-browser-features": [
-            true,
-            {
-              browsers: ["last 1 chrome version"],
-            },
-          ],
-        },
-      },
+      config: customConfig,
     });
   });
 
@@ -62,19 +62,17 @@ describe("does error and flags warnings with invalid styles", () => {
   let result;
 
   beforeEach(() => {
+    const customConfig = { ...config };
+    customConfig.rules["plugin/no-unsupported-browser-features"] = [
+      true,
+      {
+        browsers: ["defaults"],
+        severity: "warning",
+      },
+    ];
     result = stylelint.lint({
       code: invalidStyles,
-      config,
-      configOverrides: {
-        rules: {
-          "plugin/no-unsupported-browser-features": [
-            true,
-            {
-              browsers: ["defaults"],
-            },
-          ],
-        },
-      },
+      config: customConfig,
     });
   });
 

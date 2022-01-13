@@ -13,7 +13,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [14]
+        node-version: [16]
         os: [ubuntu-latest]
     steps:
       - name: Checkout the full history
