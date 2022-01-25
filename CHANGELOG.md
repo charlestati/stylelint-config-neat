@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/charlestati/stylelint-config-neat/compare/v2.0.0...v2.1.0) (2022-01-25)
+
+
+### Features
+
+* Use stylelint-prettier ([abf066b](https://github.com/charlestati/stylelint-config-neat/commit/abf066bb5ab294fff058c5966994f4f547bb3f49))
+
 # [2.0.0](https://github.com/charlestati/stylelint-config-neat/compare/v1.0.0...v2.0.0) (2022-01-13)
 
 
