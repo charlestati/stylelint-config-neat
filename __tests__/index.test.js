@@ -16,17 +16,18 @@
 
 "use strict";
 
-const config = require("../index");
+const path = require("path");
 const fs = require("fs");
 const stylelint = require("stylelint");
+const config = require("../index");
 
 const validStyles = fs.readFileSync("__tests__/valid.pcss", "utf-8");
 const invalidStyles = fs.readFileSync("__tests__/invalid.pcss", "utf-8");
 
 describe("does not error and flags no warnings with valid styles", () => {
-  let result;
+  let data;
 
-  beforeEach(() => {
+  beforeEach(async () => {
     const customConfig = {
       ...config,
     };
@@ -37,31 +38,29 @@ describe("does not error and flags no warnings with valid styles", () => {
         severity: "warning",
       },
     ];
-    result = stylelint.lint({
+    data = await stylelint.lint({
       code: validStyles,
       config: customConfig,
     });
   });
 
   it("does not error", () => {
-    return result.then((data) => expect(data.errored).toBeFalsy());
+    return expect(data.errored).toBeFalsy();
   });
 
   it("flags no warnings", () => {
-    return result.then((data) =>
-      expect(
-        data.results[0].warnings.filter(
-          (warning) => warning.severity === "warning"
-        )
-      ).toHaveLength(0)
-    );
+    expect(
+      data.results[0].warnings.filter(
+        (warning) => warning.severity === "warning"
+      )
+    ).toHaveLength(0);
   });
 });
 
 describe("does error and flags warnings with invalid styles", () => {
-  let result;
+  let data;
 
-  beforeEach(() => {
+  beforeEach(async () => {
     const customConfig = { ...config };
     customConfig.rules["plugin/no-unsupported-browser-features"] = [
       true,
@@ -70,33 +69,60 @@ describe("does error and flags warnings with invalid styles", () => {
         severity: "warning",
       },
     ];
-    result = stylelint.lint({
+    data = await stylelint.lint({
       code: invalidStyles,
       config: customConfig,
     });
   });
 
   it("does error", () => {
-    return result.then((data) => expect(data.errored).toBeTruthy());
+    return expect(data.errored).toBeTruthy();
   });
 
   it("flags 4 errors", () => {
-    return result.then((data) =>
-      expect(
-        data.results[0].warnings.filter(
-          (warning) => warning.severity === "error"
-        )
-      ).toHaveLength(4)
-    );
+    expect(
+      data.results[0].warnings.filter((warning) => warning.severity === "error")
+    ).toHaveLength(4);
   });
 
   it("flags 4 warnings", () => {
-    return result.then((data) =>
-      expect(
-        data.results[0].warnings.filter(
-          (warning) => warning.severity === "warning"
-        )
-      ).toHaveLength(4)
-    );
+    expect(
+      data.results[0].warnings.filter(
+        (warning) => warning.severity === "warning"
+      )
+    ).toHaveLength(4);
+  });
+});
+
+describe("handles Sass files", () => {
+  let data;
+
+  beforeEach(async () => {
+    const customConfig = {
+      ...config,
+    };
+    customConfig.rules["plugin/no-unsupported-browser-features"] = [
+      true,
+      {
+        browsers: ["last 1 firefox version"],
+        severity: "warning",
+      },
+    ];
+    data = await stylelint.lint({
+      files: [path.join(__dirname, "valid.scss")],
+      config: customConfig,
+    });
+  });
+
+  it("does not error", () => {
+    return expect(data.errored).toBeFalsy();
+  });
+
+  it("flags no warnings", () => {
+    expect(
+      data.results[0].warnings.filter(
+        (warning) => warning.severity === "warning"
+      )
+    ).toHaveLength(0);
   });
 });
