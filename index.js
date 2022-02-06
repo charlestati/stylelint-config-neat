@@ -95,6 +95,7 @@ module.exports = {
     "selector-max-id": 0,
     "selector-max-specificity": "0,4,0",
     "selector-max-type": 0,
+    "selector-nested-pattern": "^&",
     "selector-no-qualifying-type": true,
     "selector-pseudo-element-colon-notation": "double",
     "selector-pseudo-element-no-unknown": true,

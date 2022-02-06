@@ -82,7 +82,7 @@ describe("does error and flags warnings with invalid styles", () => {
   it("flags 4 errors", () => {
     expect(
       data.results[0].warnings.filter((warning) => warning.severity === "error")
-    ).toHaveLength(4);
+    ).toHaveLength(5);
   });
 
   it("flags 4 warnings", () => {
