@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/charlestati/stylelint-config-neat/compare/v2.1.0...v2.2.0) (2022-01-26)
+
+
+### Features
+
+* Handle `.scss` files ([73a0a9a](https://github.com/charlestati/stylelint-config-neat/commit/73a0a9a63258b2c533c446b0b0fec69e1a22268c))
+
 # [2.1.0](https://github.com/charlestati/stylelint-config-neat/compare/v2.0.0...v2.1.0) (2022-01-25)
 
 
