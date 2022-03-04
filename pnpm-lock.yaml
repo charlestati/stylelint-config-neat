@@ -22,22 +22,17 @@ specifiers:
   semantic-release: 19.0.2
   stylelint: 14.5.3
   stylelint-a11y: 1.2.3
-  stylelint-config-prettier: 9.0.3
   stylelint-config-recommended: 7.0.0
   stylelint-config-recommended-scss: 5.0.2
   stylelint-no-unsupported-browser-features: 5.0.3
   stylelint-order: 5.0.0
-  stylelint-prettier: 2.0.0
 
 dependencies:
-  prettier: 2.5.1
   stylelint-a11y: 1.2.3_stylelint@14.5.3
-  stylelint-config-prettier: 9.0.3_stylelint@14.5.3
   stylelint-config-recommended: 7.0.0_stylelint@14.5.3
   stylelint-config-recommended-scss: 5.0.2_stylelint@14.5.3
   stylelint-no-unsupported-browser-features: 5.0.3_stylelint@14.5.3
   stylelint-order: 5.0.0_stylelint@14.5.3
-  stylelint-prettier: 2.0.0_prettier@2.5.1+stylelint@14.5.3
 
 devDependencies:
   "@commitlint/cli": 16.2.1
@@ -54,6 +49,7 @@ devDependencies:
   husky: 7.0.4
   jest: 27.5.1
   npm-run-all: 4.1.5
+  prettier: 2.5.1
   remark-cli: 10.0.1
   remark-preset-lint-recommended: 6.1.2
   remark-preset-prettier: 1.0.0_prettier@2.5.1
@@ -3498,6 +3494,7 @@ packages:
       {
         integrity: sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==,
       }
+    dev: true
 
   /fast-glob/3.2.11:
     resolution:
@@ -6803,6 +6800,7 @@ packages:
     engines: { node: ">=6.0.0" }
     dependencies:
       fast-diff: 1.2.0
+    dev: true
 
   /prettier/2.5.1:
     resolution:
@@ -6811,7 +6809,7 @@ packages:
       }
     engines: { node: ">=10.13.0" }
     hasBin: true
-    dev: false
+    dev: true
 
   /pretty-format/27.5.1:
     resolution:
@@ -8388,19 +8386,6 @@ packages:
       stylelint: 14.5.3
     dev: false
 
-  /stylelint-config-prettier/9.0.3_stylelint@14.5.3:
-    resolution:
-      {
-        integrity: sha512-5n9gUDp/n5tTMCq1GLqSpA30w2sqWITSSEiAWQlpxkKGAUbjcemQ0nbkRvRUa0B1LgD3+hCvdL7B1eTxy1QHJg==,
-      }
-    engines: { node: ">= 12" }
-    hasBin: true
-    peerDependencies:
-      stylelint: ">=11.0.0"
-    dependencies:
-      stylelint: 14.5.3
-    dev: false
-
   /stylelint-config-recommended-scss/5.0.2_stylelint@14.5.3:
     resolution:
       {
@@ -8464,21 +8449,6 @@ packages:
     dependencies:
       postcss: 8.4.7
       postcss-sorting: 7.0.1_postcss@8.4.7
-      stylelint: 14.5.3
-    dev: false
-
-  /stylelint-prettier/2.0.0_prettier@2.5.1+stylelint@14.5.3:
-    resolution:
-      {
-        integrity: sha512-jvT3G+9lopkeB0ARmDPszyfaOnvnIF+30QCjZxyt7E6fynI1T9mOKgYDNb9bXX17M7PXMZaX3j/26wqakjp1tw==,
-      }
-    engines: { node: ^12.22.0 || ^14.17.0 || >=16.0.0 }
-    peerDependencies:
-      prettier: ">=2.0.0"
-      stylelint: ">=14.0.0"
-    dependencies:
-      prettier: 2.5.1
-      prettier-linter-helpers: 1.0.0
       stylelint: 14.5.3
     dev: false
 
