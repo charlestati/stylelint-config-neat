@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/charlestati/stylelint-config-neat/compare/v2.2.0...v2.3.0) (2022-02-06)
+
+
+### Features
+
+* Add `selector-nested-pattern` rule ([e8df708](https://github.com/charlestati/stylelint-config-neat/commit/e8df708774b13909ddacd2b4e603806689c50b64))
+
 # [2.2.0](https://github.com/charlestati/stylelint-config-neat/compare/v2.1.0...v2.2.0) (2022-01-26)
 
 
