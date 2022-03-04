@@ -20,8 +20,15 @@ const propertiesOrder = require("./properties-order");
 
 module.exports = {
   extends: ["stylelint-config-recommended", "stylelint-prettier/recommended"],
-  plugins: ["stylelint-no-unsupported-browser-features", "stylelint-order"],
+  plugins: [
+    "stylelint-a11y",
+    "stylelint-no-unsupported-browser-features",
+    "stylelint-order",
+  ],
   rules: {
+    "a11y/line-height-is-vertical-rhythmed": true,
+    "a11y/media-prefers-reduced-motion": true,
+    "a11y/selector-pseudo-class-focus": true,
     "block-no-empty": true,
     "color-hex-length": "long",
     "color-named": "never",

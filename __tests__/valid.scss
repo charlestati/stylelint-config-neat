@@ -64,6 +64,10 @@
       0 1px 0 #ffffff,
       2px 2px 1px 1px #cccccc inset;
     animation: 3s none fade-in;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
   }
 
   /* Flush nested single line comment */
