@@ -115,7 +115,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["**/*.scss"],
+      files: ["*.scss", "**/*.scss"],
       extends: ["stylelint-config-recommended-scss"],
     },
   ],
