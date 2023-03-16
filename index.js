@@ -21,7 +21,7 @@ const propertiesOrder = require("./properties-order");
 module.exports = {
   extends: ["stylelint-config-recommended"],
   plugins: [
-    "stylelint-a11y",
+    "@ronilaukkarinen/stylelint-a11y",
     "stylelint-no-unsupported-browser-features",
     "stylelint-order",
   ],

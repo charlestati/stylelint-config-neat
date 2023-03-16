@@ -11,12 +11,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [16]
+        node-version: [18]
         os: [ubuntu-latest]
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      - uses: pnpm/action-setup@v2.2.1
+        uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.4
         with:
           version: latest
       - name: Use Node.js ${{ matrix.node-version }}
@@ -34,15 +34,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [12, 14, 16]
+        node-version: [16, 18]
         os: [macos-latest, ubuntu-latest, windows-latest]
     steps:
-      - uses: actions/checkout@v2
-      - uses: pnpm/action-setup@v2.2.1
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.4
         with:
           version: latest
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
