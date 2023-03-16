@@ -1,4 +1,5 @@
 __tests__/**/*.pcss
 __tests__/**/*.scss
 package-lock.json
+pnpm-lock.yaml
 CHANGELOG.md
