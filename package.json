@@ -63,6 +63,6 @@
     "remark-preset-lint-recommended": "6.1.2",
     "remark-preset-prettier": "2.0.1",
     "semantic-release": "20.1.1",
-    "stylelint": "15.3.0"
+    "stylelint": "15.10.1"
   }
 }
