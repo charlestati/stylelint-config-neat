@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-"use strict";
-
 /*
  Properties are retrieved from the MDN CSS reference.
  https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
@@ -631,7 +629,7 @@ const svgPresentationAttributes = [
 // https://developer.mozilla.org/en-US/docs/Web/CSS/Microsoft_Extensions
 const microsoftExtensions = ["zoom"];
 
-module.exports = [
+export default [
   "all",
   ...positioning,
   ...display,

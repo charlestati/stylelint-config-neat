@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-"use strict";
+import path from "node:path";
+import fs from "node:fs";
+import stylelint from "stylelint";
 
-const path = require("path");
-const fs = require("fs");
-const stylelint = require("stylelint");
-const config = require("../index");
+import config from "../index";
 
 const validStyles = fs.readFileSync("__tests__/valid.pcss", "utf-8");
 const invalidStyles = fs.readFileSync("__tests__/invalid.pcss", "utf-8");
@@ -85,12 +84,12 @@ describe("does error and flags warnings with invalid styles", () => {
     ).toHaveLength(5);
   });
 
-  it("flags 4 warnings", () => {
+  it("flags 21 warnings", () => {
     expect(
       data.results[0].warnings.filter(
         (warning) => warning.severity === "warning"
       )
-    ).toHaveLength(4);
+    ).toHaveLength(21);
   });
 });
 
@@ -109,7 +108,7 @@ describe("handles Sass files", () => {
       },
     ];
     data = await stylelint.lint({
-      files: [path.join(__dirname, "valid.scss")],
+      files: [path.resolve("__tests__/valid.scss")],
       config: customConfig,
     });
   });

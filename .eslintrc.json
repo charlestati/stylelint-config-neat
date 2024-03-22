@@ -1,8 +1,9 @@
 {
   "root": true,
-  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "extends": ["eslint:recommended", "prettier"],
   "parserOptions": {
-    "ecmaVersion": 11
+    "sourceType": "module",
+    "ecmaVersion": 2020
   },
   "env": {
     "node": true,
@@ -11,8 +12,9 @@
   "overrides": [
     {
       "files": ["*.test.js"],
+      "plugins": ["jest"],
       "env": {
-        "jest": true
+        "jest/globals": true
       }
     }
   ]

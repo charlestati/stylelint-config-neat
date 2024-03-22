@@ -14,20 +14,18 @@
  * limitations under the License.
  */
 
-"use strict";
+import propertiesOrder from "./properties-order.js";
 
-const propertiesOrder = require("./properties-order");
-
-module.exports = {
+export default {
   extends: ["stylelint-config-recommended"],
   plugins: [
-    "@ronilaukkarinen/stylelint-a11y",
+    "@double-great/stylelint-a11y",
     "stylelint-no-unsupported-browser-features",
     "stylelint-order",
   ],
   rules: {
-    "a11y/line-height-is-vertical-rhythmed": true,
     "a11y/media-prefers-reduced-motion": true,
+    "a11y/no-outline-none": true,
     "a11y/selector-pseudo-class-focus": true,
     "at-rule-empty-line-before": [
       "always",
