@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/charlestati/stylelint-config-neat/compare/v2.6.0...v2.7.0) (2024-03-22)
+
+
+### Features
+
+* Upgrade libraries ([f515d2d](https://github.com/charlestati/stylelint-config-neat/commit/f515d2d28eb70c1e7df8417a2c7ded9377cf0ec5))
+
 # [2.6.0](https://github.com/charlestati/stylelint-config-neat/compare/v2.5.0...v2.6.0) (2024-03-22)
 
 
